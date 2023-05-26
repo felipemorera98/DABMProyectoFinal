@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Monitor Cardiaco</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename = 'logo.png') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function Login(){
+			Usuario=document.getElementById("Usuario").value;
+			Contraseña=document.getElementById("Contraseña").value;			
+			if(Usuario!=""&&Contraseña!=""){
+				alert("Campos Llenos");
+				document.getElementById("validacion").innerHTML="Campos Llenos";
+			}else{
+				alert("Algun campo esta vacio")
+				document.getElementById("validacion").innerHTML="Campos Llenos";
+			}
+		}
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename = 'corazon1.jpg') }}" width="100%" height="250px">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename = 'corazon2.jpg') }}" width="100%" height="250px">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename = 'corazon3.jpg') }}" width="100%" height="250px">
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>        
+    </div> 
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+        </div>
+    </div> 
+    <div class="container mt-3">
+        <h1 class="text-primary">Monitorizacion Cardiaca</h1>
+        <br>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#home">Estadisticas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu1">Enfermedades Cardiacas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#menu3">Proyecto</a>
+          </li>
+        </ul>
+      
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="home" class="container tab-pane active"><br>
+                <div class="container mt-5">
+                    
+                    <div class="row">
+                        <h2>Causas de muertes en el Mundo 1990-2019</h2>
+                        <p>La principal causa de muerte a nivel mundial son las enfermedades Cardiacas, de las cuales las causantes principales son malos habitos que van degradando algunos sistemas del cuerpo humano. </p>
+                        <div class="col-sm-10">
+                            <img src="{{ url_for('static', filename = 'mundo.png') }}" width="90%" height="500px">
+                        </div>  
+                        <h4>Grafica tomada de la pagina https://ourworldindata.org</h4> 
+                        <br>                   
+                    </div>
+                </div>
+                <div class="container mt-5">
+                    <div class="row">
+                        <h2>Causas de muertes en Colombia 1990-2019</h2>
+                        <p>Como es de esperarse tambien la pincipal causa de muerte en Colombia son las enfermedades Cardiacas y las causas siguen siendo las mismas, actividades cotidianas que son dañinas para el cuerpo humano</p>
+                        <div class="col-sm-10">
+                            <img src="{{ url_for('static', filename = 'colombia.png') }}" width="90%" height="500px">
+                        </div>    
+                        <h4>Grafica tomada de la pagina https://ourworldindata.org</h4> 
+                        <p><a href="https://ourworldindata.org/causes-of-death">Causas de Muerte</a></p>
+                        <br> 
+                        
+                    </div>                
+                </div>
+                <div class="container mt-4">
+                    <div class="row">
+                        <h2>Principales Causas de Enfermedades Cardiacas</h2>
+                        <p>La principal causa de enfermedades cardiacas es el consumo de cigarrillo.</p>
+                        <div class="col-sm-10">
+                            <img src="{{ url_for('static', filename = 'cigarrillo.png') }}" width="70%" height="400px">
+                        </div> 
+                        <br>
+                       
+                        <p>Noticia tomada de Infobae</p>
+                        <p><a href="https://www.infobae.com/america/ciencia-america/2022/05/31/el-cigarrillo-mata-a-mas-de-8-millones-de-personas-en-el-mundo-cada-ano/">Para mas Informacion visite este link</a></p>
+                    </div>
+                    <div class="row">
+                        <h3>Materiales dañinos para el cuerpo que contiene el cigarrillo</h3>
+                        <div class="col-sm-10">
+                            <img src="{{ url_for('static', filename = 'cigarrillo1.jpg') }}" width="70%" height="500px">
+                        </div> 
+                    </div>
+                    <div class="row">
+                        <h3>Malos hábitos alimenticios</h3>
+                        <div class="col-sm-10">
+                            <img src="{{ url_for('static', filename = 'sindrome-metabolico.png') }}" width="70%" height="300px">
+                        </div> 
+                        <p>El consumir bebidas carbonatas altas en azucares, comida chatarra, exceso de dulces y tener una dieta o comida balanceada proboca sobre-peso en las personas y corren riesgo no solo de sufrir enfermedades Cardiacas, ademas pueden sufrir de canceres, diabetes y en casos muy avanzados es necesario la intervencion de equipos medicos para reemplazar organos ejemplo la dialisis.</p>
+                    </div>
+                </div>
+                <h3>Noticia del Tiempo</h3>
+                Para ver un dato estadistico por el DANE, la noticia se encuentra en el periodico El Tiempo, el cual nos explica un panorama de salud citico en Colombia. 
+                <p><a href="https://www.eltiempo.com/colombia/cual-es-la-principal-causa-de-muerte-en-colombia-el-dane-entrego-cifras-753910#:~:text=Según%20el%20Dane%2C%20la%20principal,las%20cifras%20entregadas%20en%202021.">El Tiempo</a></p>
+                                
+            </div>
+
+            <div id="menu1" class="container tab-pane fade"><br>
+                <h2 class="text-danger">Tipos de Enfermedades Cardiacas</h2>
+                <br>
+                <ol>
+                    <li>
+                        <h4>Enfermedad de las arterias coronarias</h4>
+                        <p>                        
+                            Se desarrolla cuando las arterias son obstruidas con placa, está compuesta por colesterol y otras sustancias, lo que genera que las arterias se endurezcan y se estrechen produciendo una insuficiencia de oxigeno y nutrientes al corazón lo que conlleva con el tiempo a generar una debilidad en el musculo cardiaco y generar insuficiencia cardiaca y arritmias.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Defectos Cardiácos Congénitos</h4>
+                        <p>
+                            La afección cardiaca congénita consiste en problemas estructurales del corazón desde malformaciones en la estructura del corazón como en la ausencia de partes del corazón, como ventrículos. Esto puede incluir:
+                        </p>
+                        <ul>
+                            <li>
+                                Válvulas Cardiacas anormales: es posible que las válvulas no se abran de correctamente o que no cierre correctamente.
+                            </li>
+                            <li>
+                                Defectos septales: un agujero en la pared entre cámaras inferiores o superiores del corazón.
+                            </li>
+                            <li>
+                                Atresia: no se tiene una válvula cardiaca
+                            </li>                        
+                        </ul>
+                        <br>
+                        <div class="span">
+                             <img src="{{ url_for('static', filename = 'septales.jpg') }}" class="img-thumbnail" alt="Cinque Terre" width="350px" height="250px">
+                        </div>
+                       
+                    </li>
+                    <li>
+                        <h4>Arritmias</h4>
+                        <p>
+                            Las arritmias son causadas por una irregularidad en los impulsos eléctricos que coordinan los latidos del corazón lo que ocasiona que el corazón lata de manera anormal y se puede clasificar en:
+                        </p>
+                        <ul>
+                            <li>
+                                Taquicardia: ritmo cardiaco acelerado.
+                            </li>
+                            <li>
+                                Bradicardia: ritmo cardiaco lento.
+                            </li>
+                            <li>
+                                Contracciones prematuras: latido del corazón adelantado.
+                            </li>
+                            <li>
+                                Fibrilación auricular: ritmo cardiaco irregular.
+                            </li>
+                        </ul>
+                    </li>
+                    <br>
+                    <li>
+                        <h4>Miocardiopatía Dilatada</h4>
+                        <p>
+                            El musculo cardiaco de las cámaras del corazón se estiran y se hacen mas delgado, esto causa que el corazón se debilite y no bombee sangre correctamente. Las causas más comunes de miocardiopatía dilatada son ataques al corazón anteriores, arritmias y toxinas.
+                        </p>
+                        <p>
+                            Por lo general afecta a personas entre 20 y 60 años.
+                        </p>
+    
+                    </li>
+                    <li>
+                        <h4>
+                            Infarto de Miocardio
+                        </h4>
+                        <p>También conocido como ataque cardíaco, el infarto de miocardio implica una interrupción del flujo de sangre al corazón. Esto puede dañar o destruir parte del músculo cardíaco.</p>
+                        <p>La causa más común de un ataque cardíaco es la placa, un coágulo de sangre, o ambos, en una arteria coronaria. También puede ocurrir si una arteria se estrecha o sufre espasmos de forma repentina.</p>
+                    </li>
+                    <li>
+                        <h4>
+                            Insuficiencia Cardíaca
+                        </h4>
+                        <p>Cuando una persona tiene insuficiencia cardíaca, el corazón sigue funcionando, pero no tan bien como debería. La insuficiencia cardíaca congestiva es un tipo de insuficiencia cardíaca.</p>
+                        <p>La insuficiencia cardíaca puede ser el resultado de una enfermedad de las arterias coronarias no tratada, presión arterial alta, arritmias y otras enfermedades. Estas enfermedades pueden afectar la capacidad del corazón para bombear correctamente.La insuficiencia cardíaca puede ser el resultado de una enfermedad de las arterias coronarias no tratada, presión arterial alta, arritmias y otras enfermedades. Estas enfermedades pueden afectar la capacidad del corazón para bombear correctamente.</p>
+                        <p>La insuficiencia cardíaca puede poner en peligro la vida, pero buscar un tratamiento temprano para las enfermedades del corazón puede ayudar a prevenir las complicaciones.</p>
+                    </li>
+                    <li>
+                        <h4>
+                            Miocardiopatía Hipertrófica
+                        </h4>
+                        <p>Esta afección generalmente se desarrolla cuando el músculo cardíaco se ve afectado por un problema genético. Suele ser una enfermedad hereditaria.</p>
+
+                        <p>Las paredes del músculo se engrosan y las contracciones se vuelven más fuertes. Esto afecta la capacidad del corazón para absorber y bombear sangre. En algunos casos, puede ocurrir una obstrucción.</p>
+                            
+                        <p>Es posible que no haya síntomas y muchas personas no reciben un diagnóstico. Sin embargo, la miocardiopatía hipertrófica puede empeorar con el tiempo y provocar diferentes problemas cardíacos.</p>
+                            
+                        <p>Cualquier persona con antecedentes familiares de esta afección debe solicitar que le realicen una prueba de detección, ya que recibir tratamiento puede ayudar a prevenir complicaciones.</p>
+                            
+                        <p>La miocardiopatía hipertrófica es la principal causa de muerte cardíaca entre deportistas y personas menores de 35 años, según la AHA.</p>
+                    </li>
+                    <li>
+                        <h4>
+                            Insuficiencia de la válvula Mitral
+                        </h4>
+                        <p>Este evento ocurre cuando la válvula mitral en el corazón no se cierra del todo y permite que la sangre vuelva al corazón.</p>
+
+                        <p>Como resultado, la sangre no puede circular a través del corazón o el cuerpo de manera eficiente y puede ejercer presión sobre las venas que van de los pulmones al corazón. Con el tiempo, el corazón puede agrandarse y puede producir insuficiencia cardíaca.</p>
+                    </li>
+                    <li>
+                        <h4>
+                            Prolapso de la válvula Mitral
+                        </h4>
+                        <p>Esto sucede cuando las aletas de la válvula mitral no se cierran correctamente. En cambio, sobresalen hacia la aurícula izquierda. Esto puede provocar un soplo cardíaco.</p>
+
+                        <p>El prolapso de la válvula mitral no suele poner en riesgo la vida, pero algunas personas pueden necesitar tratamiento.</p>
+                            
+                        <p>Los factores genéticos y los problemas del tejido conectivo pueden provocar esta afección, que afecta a alrededor del 2% de la población.</p>
+                    </li>
+                    <li>
+                        <h4>
+                            Estenosis Aórtica
+                        </h4>
+                        <p>En la estenosis aórtica, la válvula pulmonar es gruesa o fusionada y no se abre correctamente. Esto dificulta que el corazón bombee sangre del ventrículo derecho a la arteria pulmonar.</p>
+
+                        <p>En la estenosis aórtica, la abertura de la válvula aórtica es demasiado estrecha, esto restringe el flujo sanguíneo del ventrículo izquierdo a la aorta. También puede afectar la presión en la aurícula izquierda.</p>
+                            
+                        <p>Se puede nacer con esta afección o puede desarrollarse con el tiempo debido a depósitos de calcio o cicatrices.</p>
+                    </li>
+    
+                </ol>
+    
+                
+    
+                
+            </div>
+            
+            
+            <div id="menu3" class="container tab-pane fade"><br>
+                <h3>Descripcion del Proyecto</h3>
+                <p>El proyecto consiste en un dispositivo que censa cinco señales biológicas muy importantes para identificar que enfermedad cardiaca padece el paciente y en que ligar se puede estar presentando, los datos adquiridos son enviados a una base de datos (MYSQL) el cual son mostradas en una pagina web para su estudio.</p>
+                <p>Este tipo de dispositivos son importantes para pacientes que acaban de sufrir una enfermedad cardiaca ya que los 30 días posteriores el estado del paciente es critico y puede sufrir uno o varios episodios que pueden acabar con la vida de él.</p>
+                <p>Cabe aclarar que este proyecto se encuentra en desarrollo, ya que el fin es procesar esta información con una inteligencia artificial y poder predecir o clasificarlo la enfermedad cardiaca y así poder dar un diagnóstico aproximado de lo que puede estar sufriendo el paciente.</p>
+                <div class="col-sm-10">
+                    <img src="{{ url_for('static', filename = 'proyecto.jpeg') }}" width="90%" height="550px">
+                </div>
+                
+                <div class="container mt-3">
+                    <h2>Consultar Datos del Paciente</h2>
+                    <p>Debe tener la autorizacion del Medico para poder consultar los datos del pacientes.</p>
+                    <div class="row">
+                        <div class="mt-4 p-5 bg-dark text-white rounded">
+                            <h4>Ingrese usuario y contraseña del paciente</h4>                            
+                            <form action="{{url_for('datos_web')}}" method='POST'>
+                                <input type="text" class="form-control" id="Usuario" placeholder="Usuario" name="Usuario">
+                                <br>
+                                <input type="password" class="form-control" id="Contraseña" placeholder="Contraseña" name="Contraseña">
+                                <br>
+                            <button type="submit" class="btn btn-primary btn-block btn-large" onclick=>Ingresar</button>
+                                <button type="button" class="btn btn-danger">Borrar</button>
+                            </form>
+                            <br>
+                            {{error}}                 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+          <div class="col p-1 bg-primary text-white"></div>
+          <div class="col p-1 bg-danger text-white"></div>
+        </div>
+    </div> 
+    <div class="p-5 bg-dark text-white text-center">
+        <h1>Proyecto Dirigido </h1>
+        <h2>Enfasis en Ingenieria Biomedica</h2>
+        <h3>Ingeniería Electrónica</h3>
+        <h4>Universidad Escuela Colombiana de Ingeneiria  Julio Garavito</h4> 
+      </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Usuario no encontrado</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="bg-light p-5 text-center">
+  <h2>El Usuario que acaba de ingresar no se encuentra registrado</h2>
+  <p>Por favor verifique con el Médico si el usuario {{usuario}} esta registraso, de ser el caso, por favor verifique si esta buen escrito Usuario y Contraseña</p>
+  <p>Cabe mencionar que el Usuario del paciente puede ser:</p>
+  <ol>
+    <ul>
+        Cedula de Ciudadania
+    </ul>
+    <ul>
+        Tarjeta de Identidad
+    </ul>
+    <ul>
+        Cedula de Extranjeria
+    </ul>
+    <ul>
+        Pasaporte
+    </ul>
+  </ol>
+
+  <h3>Gracias y que tenga buen día</h3>
+</div>
+
+<form action="{{url_for('regresar_datos')}}" method='POST'>
+  <button type="submit" class="btn btn-primary btn-block"id="regresar" name="regresar" onclick=>Regresar</button>
+</form>
+
+</body>
+</html>
